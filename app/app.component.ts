@@ -17,6 +17,8 @@ export class TaskListComponent {
   }
 }
 
+
+
 @Component({
   selector: 'my-app',
   directives: [TaskListComponent],
@@ -27,17 +29,8 @@ export class TaskListComponent {
     </div>
   `
 })
-
-
-export class Task {
-  public done: boolean = false;
-  constructor(public description: string, public id: number) {
-
-  }
-}
-
 export class AppComponent {
-  public tasks: Task [];
+  public tasks: Task[];
   constructor(){
     this.tasks = [
       new Task("Create To-Do List app.", 0),
@@ -48,5 +41,13 @@ export class AppComponent {
   }
   taskWasSelected(clickedTask: Task): void {
     console.log(clickedTask);
+  }
+}
+
+
+export class Task {
+  public done: boolean = false;
+  constructor(public description: string, public id: number) {
+
   }
 }
